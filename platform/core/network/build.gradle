@@ -7,3 +7,11 @@ java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 }
+
+dependencies {
+    implementation(libs.square.okhttp.core)
+    implementation(libs.square.okhttp.logging)
+    implementation(libs.square.okhttp.mockwebserver)
+    implementation(libs.square.retrofit)
+    implementation(libs.google.gson)
+}

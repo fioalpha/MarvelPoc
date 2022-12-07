@@ -1,0 +1,15 @@
+[libraries]
+# Google
+google-truth = "com.google.truth:truth:1.1.3"
+google-material-design = "com.google.android.material:material:1.7.0"
+google-gson = "com.google.code.gson:gson:2.10"
+# Square / CashApp
+square-okhttp-core = "com.squareup.okhttp3:okhttp:4.10.0"
+square-okhttp-logging = "com.squareup.okhttp3:logging-interceptor:4.10.0"
+square-okhttp-mockwebserver = "com.squareup.okhttp3:mockwebserver:4.10.0"
+square-retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
+# Other / Testing
+junit4 = "junit:junit:4.13.2"
+slf4j = "org.slf4j:slf4j-nop:2.0.5"
+robolectric = "org.robolectric:robolectric:4.9"
+adevinta-barista = "com.adevinta.android:barista:4.3.0"
