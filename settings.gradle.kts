@@ -17,7 +17,7 @@ dependencyResolutionManagement {
 //        }
 //    }
 }
-rootProject.name="Marvel"
+rootProject.name = "Marvel"
 include(
     ":app",
     ":platform:core:network"
