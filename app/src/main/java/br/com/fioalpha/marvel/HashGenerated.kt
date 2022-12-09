@@ -3,11 +3,10 @@ package br.com.fioalpha.marvel
 import java.math.BigInteger
 import java.security.MessageDigest
 
-
-//ts = 1670545124812
-//1968ce91287d6d4ae07efc24c6dd734f
-
-//https://gateway.marvel.com:443/v1/public/characters?ts=1670544152607&apikey=025f2cd3ea0aaa7b9c445d8a5897de59&apikey=a87f69b0d083ef2f3c001d65d45739a8//?//
+private const val LENGTH_PAD = 32
+private const val MD5 = "MD5"
+private const val RADIX = 16
+private const val PAD_CHAR = '0'
 fun main() {
     val timeStamp = System.currentTimeMillis()
     val apikey = "025f2cd3ea0aaa7b9c445d8a5897de59"
@@ -22,7 +21,7 @@ fun generatedCode(apikey: String, apiSecret: String, timeStamp: Long): String {
 }
 
 fun String.md5(): String {
-    val md = MessageDigest.getInstance("MD5")
-    return BigInteger(1, md.digest(this.toByteArray())).toString(16)
-        .padStart(32, '0')
+    val md = MessageDigest.getInstance(MD5)
+    return BigInteger(1, md.digest(this.toByteArray())).toString(RADIX)
+        .padStart(LENGTH_PAD, PAD_CHAR)
 }

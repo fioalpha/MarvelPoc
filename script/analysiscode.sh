@@ -55,6 +55,7 @@ run_ktlint() {
 
 readonly pmd_home="$cache_directory/pmd"
 readonly pmd_bin="$pmd_home/unziped/pmd-bin-6.52.0/bin/run.sh"
+
 run_pmd() {
   if ! test -f "$pmd_bin";then
     echo -e "${cyan_color}Install PMD binary${normal_color}"
@@ -69,4 +70,4 @@ run_pmd() {
 
 run_pmd
 run_detekt
-run_ktlinte
+run_ktlint
