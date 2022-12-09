@@ -16,6 +16,8 @@ dependencyResolutionManagement {
 //            from(files("gradle/libs.versions.toml"))
 //        }
 //    }
+
+
 }
 rootProject.name = "Marvel"
 include(
@@ -24,3 +26,4 @@ include(
 )
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 enableFeaturePreview("VERSION_CATALOGS")
+include(":feature:character")
