@@ -8,7 +8,7 @@ square-okhttp-core = "com.squareup.okhttp3:okhttp:4.10.0"
 square-okhttp-logging = "com.squareup.okhttp3:logging-interceptor:4.10.0"
 square-okhttp-mockwebserver = "com.squareup.okhttp3:mockwebserver:4.10.0"
 square-retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
-# Other / Testing
+square-gson-converter = "com.squareup.retrofit2:converter-gson:2.9.0"
 junit4 = "junit:junit:4.13.2"
 slf4j = "org.slf4j:slf4j-nop:2.0.5"
 robolectric = "org.robolectric:robolectric:4.9"

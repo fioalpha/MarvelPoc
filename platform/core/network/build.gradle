@@ -11,7 +11,10 @@ java {
 dependencies {
     implementation(libs.square.okhttp.core)
     implementation(libs.square.okhttp.logging)
-    implementation(libs.square.okhttp.mockwebserver)
     implementation(libs.square.retrofit)
     implementation(libs.google.gson)
+    implementation(libs.square.gson.converter)
+
+    testImplementation(libs.square.okhttp.mockwebserver)
+    testImplementation(libs.junit4)
 }
