@@ -2,8 +2,8 @@ package br.com.fioalpha.marvel
 
 import java.math.BigInteger
 import java.security.MessageDigest
-import java.security.Timestamp
-import java.util.*
+import java.util.Calendar
+import java.util.TimeZone
 
 private const val LENGTH_PAD = 32
 private const val MD5 = "MD5"
