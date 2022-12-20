@@ -15,7 +15,7 @@ data class CharacterDataContainerResponse(
     val limit: Int?,
     val total: Int?,
     val count: Int?,
-    val result: List<CharacterResponse?>
+    val results: List<CharacterResponse?>
 )
 
 data class CharacterResponse(

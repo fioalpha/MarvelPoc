@@ -1,3 +1,5 @@
+import com.android.build.api.dsl.JacocoOptions
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -24,6 +26,7 @@ android {
         }
         getByName("debug") {
             isMinifyEnabled = false
+            isTestCoverageEnabled = true
         }
     }
     compileOptions {
@@ -33,6 +36,13 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    testOptions {
+        animationsDisabled = true
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -41,6 +51,8 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.5.1")
     implementation("com.google.android.material:material:1.7.0")
     implementation(project(":platform:core:network"))
+    implementation(libs.koin.insert.android)
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.4")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
@@ -49,6 +61,5 @@ dependencies {
     testImplementation(libs.square.okhttp.mockwebserver)
     testImplementation(libs.kotlin.coroutine.test)
     testImplementation(libs.koin.insert.junit)
-//    testImplementation(libs.koin.insert./)
-//    testImplementation(libs.koin.insert.unit./)
+    testImplementation(libs.mockito.kotlin)
 }
