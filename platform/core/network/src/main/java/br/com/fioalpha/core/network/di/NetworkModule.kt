@@ -6,7 +6,7 @@ import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 val networkModule = module {
-    factory <ApiService> {
+    factory<ApiService> {
         RetroClient.invoke(get(qualifier = named(BASE_URL)))
             .create(ApiService::class.java)
     }

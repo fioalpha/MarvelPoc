@@ -9,7 +9,7 @@ interface CharacterRepository {
 
 class CharacterRepositoryImp(
     private val characterDataSource: CharacterDataSource
-): CharacterRepository {
+) : CharacterRepository {
     override suspend fun fetchCharacters(offset: Int): CharacterDataWrapperResponse {
         return characterDataSource.fetchCharacter(offset)
     }

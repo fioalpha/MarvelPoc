@@ -51,7 +51,7 @@ data class ComicListResponse(
     val available: Int?,
     val returned: Int?,
     val collectionURI: String?,
-    val  items: List<ComicSummaryResponse?>?
+    val items: List<ComicSummaryResponse?>?
 )
 
 data class StoryListResponse(

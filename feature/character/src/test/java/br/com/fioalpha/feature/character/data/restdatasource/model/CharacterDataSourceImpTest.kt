@@ -7,10 +7,8 @@ import br.com.fioalpha.test.convertTo
 import br.com.fioalpha.test.getFileMock
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
-import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
-import okhttp3.mockwebserver.RecordedRequest
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -22,12 +20,12 @@ import org.koin.test.inject
 import kotlin.test.assertEquals
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class CharacterDataSourceImpTest: KoinTest{
+class CharacterDataSourceImpTest : KoinTest {
 
     private val characterResponseMock by lazy {
         "CharactersRequestMock.json".getFileMock(this::class.java.classLoader)
     }
-    private val apiService: ApiService  by inject<ApiService>()
+    private val apiService: ApiService by inject<ApiService>()
     private val mockWebServe = MockWebServer()
 
     @Before
@@ -37,7 +35,7 @@ class CharacterDataSourceImpTest: KoinTest{
             modules(
                 networkModule,
                 module(createdAtStart = true) {
-                    factory(qualifier = named(BASE_URL)){ mockWebServe.url("/").toString() }
+                    factory(qualifier = named(BASE_URL)) { mockWebServe.url("/").toString() }
                 }
             )
         }
@@ -49,7 +47,7 @@ class CharacterDataSourceImpTest: KoinTest{
     }
 
     @Test
-    fun `when called fetchCharacter`() = runTest{
+    fun `when called fetchCharacter`() = runTest {
         mockWebServe.enqueue(MockResponse().setResponseCode(200).setBody(characterResponseMock))
         apiService.fetchCharacter(10, 20).run {
             assertEquals(this, characterResponseMock.convertTo())
