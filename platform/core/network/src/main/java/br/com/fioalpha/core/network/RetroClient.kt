@@ -6,7 +6,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RetroClient {
+internal object RetroClient {
     operator fun invoke(baseUrl: String): Retrofit {
         return Retrofit.Builder()
             .baseUrl(baseUrl)

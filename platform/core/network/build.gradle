@@ -14,6 +14,7 @@ dependencies {
     implementation(libs.square.retrofit)
     implementation(libs.google.gson)
     implementation(libs.square.gson.converter)
+    implementation(libs.koin.insert.core)
 
     testImplementation(libs.square.okhttp.mockwebserver)
     testImplementation(libs.junit4)
