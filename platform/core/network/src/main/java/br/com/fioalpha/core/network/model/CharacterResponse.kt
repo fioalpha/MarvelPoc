@@ -29,22 +29,21 @@ data class CharacterResponse(
     val stories: StoryListResponse?,
     val events: EventListResponse?,
     val series: SeriesListResponse?
-
 )
 
 data class UrlResponse(
     val type: String?,
-    val url: String?,
+    val url: String?
 )
 
 data class ImageResponse(
     val path: String?,
-    val extension: String?,
+    val extension: String?
 )
 
 data class ComicSummaryResponse(
     val resourceURI: String?,
-    val name: String?,
+    val name: String?
 )
 
 data class ComicListResponse(
@@ -58,7 +57,7 @@ data class StoryListResponse(
     val available: Int?,
     val returned: Int?,
     val collectionURI: String?,
-    val items: List<StorySummaryResponse?>?,
+    val items: List<StorySummaryResponse?>?
 )
 
 data class StorySummaryResponse(
