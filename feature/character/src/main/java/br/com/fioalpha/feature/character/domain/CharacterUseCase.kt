@@ -1,15 +1,17 @@
 package br.com.fioalpha.feature.character.domain
 
-import br.com.fioalpha.core.network.model.CharacterDataWrapperResponse
-import br.com.fioalpha.core.network.model.ImageResponse
+import br.com.fioalpha.feature.character.data.CharacterRepository
+import br.com.fioalpha.feature.character.domain.model.CharacterModel
 
 interface CharacterUseCase {
     suspend fun execute(page: Int): List<CharacterModel>
 }
 
-data class CharacterModel(
-    val id: Int,
-    val name: String,
-    val description: String,
-    val image: String,
-)
+class CharacterUseCaseImp(
+    private val repository: CharacterRepository
+): CharacterUseCase {
+    override suspend fun execute(page: Int): List<CharacterModel> {
+        return repository.fetchCharacters(page)
+            .transformTo()
+    }
+}
