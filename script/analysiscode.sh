@@ -36,6 +36,7 @@ run_detekt() {
 #    "$detekt_bin" --help
 
     echo "$("$detekt_bin" -c .config/detekt.yaml --build-upon-default-config -r xml:./app/build/reports/detekt/detekt.xml)"
+    echo "$?"
     if test "$?" == 0; then
       echo " asdklhjfklsdf"
         exit 1
