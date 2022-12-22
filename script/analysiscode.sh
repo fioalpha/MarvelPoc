@@ -35,11 +35,11 @@ run_detekt() {
     echo -e "${cyan_color}Running Detekt ${normal_color}"
 #    "$detekt_bin" --help
 
-    echo "$("$detekt_bin" -c .config/detekt.yaml --build-upon-default-config -r xml:./app/build/reports/detekt/detekt.xml)"
+    "$detekt_bin" -c .config/detekt.yaml --build-upon-default-config -r xml:./app/build/reports/detekt/detekt.xml
     echo "$?"
-    if test "$?" == 0; then
-      echo " asdklhjfklsdf"
-        exit 1
+    if test "$?" == 1; then
+      echo "asdklhjfklsdf"
+      exit 1
     fi
     echo -e "${green_color}No issues found with Detekt${normal_color}"
 }
@@ -74,6 +74,7 @@ run_pmd() {
     "$pmd_bin" pmd -R .config/pmd.xml -d ./src/main/java
 }
 
-run_pmd
+#./gradlew clean
+#run_pmd
 run_detekt
-run_ktlint
+#run_ktlint
