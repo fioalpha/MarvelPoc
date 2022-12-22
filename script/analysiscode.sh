@@ -39,7 +39,7 @@ run_detekt() {
     echo "$?"
     if test "$?" == 0; then
       echo " asdklhjfklsdf"
-        exit 1
+        exit 0
     fi
     echo -e "${green_color}No issues found with Detekt${normal_color}"
 }
