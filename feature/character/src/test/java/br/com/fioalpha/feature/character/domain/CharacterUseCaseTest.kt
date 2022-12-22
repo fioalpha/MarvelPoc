@@ -6,9 +6,9 @@ import br.com.fioalpha.test.convertTo
 import br.com.fioalpha.test.getFileMock
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert.*
 
 import org.junit.After
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.mockito.kotlin.mock
@@ -20,8 +20,9 @@ class CharacterUseCaseTest {
 
     private lateinit var useCase: CharacterUseCase
     private val repository = mock<CharacterRepository>()
-    private val charactersMock =  "CharacterRequestTitleMock.json".getFileMock(this::class.java.classLoader)
-        .convertTo<CharacterDataWrapperResponse>()
+    private val charactersMock =  "CharacterRequestTitleMock.json".getFileMock(
+        this::class.java.classLoader
+    ).convertTo<CharacterDataWrapperResponse>()
 
     @Before
     fun setUp() {

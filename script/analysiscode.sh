@@ -27,14 +27,19 @@ run_detekt() {
         local detekt_zip="$detekt_home/detekt.zip"
         rm -rf "$detekt_zip"
         echo -e "${cyan_color}Downloading Detekt binary....${normal_color}"
-        curl -sSL https://github.com/detekt/detekt/releases/download/v1.22.0/detekt-cli-1.22.0.zip -o "$detekt_zip"
+        curl -sSLO https://github.com/detekt/detekt/releases/download/v1.22.0/detekt-cli-1.22.0.zip -o "$detekt_zip"
         unzip "$detekt_zip" -d "$detekt_save"
 
         chmod +x "$detekt_bin"
     fi
     echo -e "${cyan_color}Running Detekt ${normal_color}"
-    "$detekt_bin" -c .config/detekt.yaml --build-upon-default-config
+#    "$detekt_bin" --help
 
+    echo "$("$detekt_bin" -c .config/detekt.yaml --build-upon-default-config -r xml:./app/build/reports/detekt/detekt.xml)"
+    if test "$?" == 0; then
+      echo " asdklhjfklsdf"
+        exit 1
+    fi
     echo -e "${green_color}No issues found with Detekt${normal_color}"
 }
 
@@ -49,7 +54,7 @@ run_ktlint() {
   fi
   echo -e "${cyan_color}Running Ktlint${normal_color}"
   "$ktlint_bin" --android
-
+  echo $?
   echo -e "${green_color}No issue found with Ktlint"
 }
 
