@@ -1,5 +1,3 @@
-import com.android.build.api.dsl.JacocoOptions
-
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")

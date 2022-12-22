@@ -9,9 +9,8 @@ interface CharacterUseCase {
 
 class CharacterUseCaseImp(
     private val repository: CharacterRepository
-): CharacterUseCase {
+) : CharacterUseCase {
     override suspend fun execute(page: Int): List<CharacterModel> {
-        return repository.fetchCharacters(page)
-            .transformTo()
+        return repository.fetchCharacters(page).transformTo()
     }
 }

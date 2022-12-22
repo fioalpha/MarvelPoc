@@ -11,13 +11,14 @@ import org.junit.Test
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
 
-
 @OptIn(ExperimentalCoroutinesApi::class)
 class CharacterRepositoryTest {
     private lateinit var repository: CharacterRepository
     private val remoteDataSource = mock<CharacterDataSource>()
-    private val charactersMock =  "CharactersRequestMock.json".getFileMock(this::class.java.classLoader)
-        .convertTo<CharacterDataWrapperResponse>()
+    private val charactersMock = "CharactersRequestMock.json".getFileMock(
+        this::class.java.classLoader
+    ).convertTo<CharacterDataWrapperResponse>()
+
     @Before
     fun setup() {
         repository = CharacterRepositoryImp(remoteDataSource)

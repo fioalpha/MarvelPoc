@@ -20,7 +20,7 @@ class CharacterUseCaseTest {
 
     private lateinit var useCase: CharacterUseCase
     private val repository = mock<CharacterRepository>()
-    private val charactersMock =  "CharacterRequestTitleMock.json".getFileMock(
+    private val charactersMock = "CharacterRequestTitleMock.json".getFileMock(
         this::class.java.classLoader
     ).convertTo<CharacterDataWrapperResponse>()
 
